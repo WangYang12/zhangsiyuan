@@ -1,8 +1,38 @@
 <!DOCTYPE HTML>
 <html>
-<body>
-<audio src="rehe.mp3" controls="controls" autoplay>
-</audio>
+<head>
+<script src="./jquery/jquery-3.3.1.min.js"></script>
+<title>张思圆</title>
+<link rel="icon" href="z.ico" type="image/x-icon"/> 
+<style type="text/css">
+  body {
+  background-color:black;
+  }
+  #div1{
+  color:white;
+  text-align:center;
+  font-size : 5em;
+  font-family:NSimSun;
+  margin-top:50px;
+  display:none;
+  
+  }
+</style>
+<script>
+window.onload = function(){
+	$("#div1").fadeIn(2000);
+	setTimeout("pause()",1000);
+	$("#div1").fadeOut(1000);
+}
 
+</script>
+
+</head>
+<body >
+<audio src="rehe.mp3" preload="none" controls="controls" autoplay>
+</audio>
+<div id = "div1">
+张思圆
+</div>
 </body>
 </html>
