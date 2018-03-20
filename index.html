@@ -14,25 +14,122 @@
   font-size : 5em;
   font-family:NSimSun;
   margin-top:50px;
+  }
+  
+  #div4{
+  color:red;
+  text-align:center;
+  font-size : 4em;
+  font-family:NSimSun;
+  margin-top:50px;
+  }
+  #btn1{
+  margin-left:520px;
+  margin-top:50px;
+  width:100px;
+  height:40px;
+  background-color:blue;
+  border-color:blue;
+  border-radius:3px;
   display:none;
+  color:white;
+  font-size:1em;
+  }
+  #btn2{
+  color:white;
+  margin-left:50px;
+  margin-top:50px;
+  background-color:blue;
+  width:100px;
+  height:40px;
+  border-color:blue;
+  border-radius:3px;
+  display:none;
+  font-size:1em;
   
   }
 </style>
 <script>
+	var i = 0;
+	function fade(){
+		$("#div1").fadeIn(2000);
+		$("#div1").fadeOut(1000);
+	}
+	function change1(){
+		document.getElementById("div1").innerHTML = "张思圆";
+		fade();
+	}
+	function change2(){
+		document.getElementById("div1").innerHTML = "接下来";
+		fade();
+	}
+	function change3(){
+		document.getElementById("div1").innerHTML = "你将听到一首歌";
+		fade();
+	}
+	function change4(){
+		document.getElementById("div1").innerHTML = "如果没听到，不要着急";
+		fade();
+	}
+	function change5(){
+		document.getElementById("div1").innerHTML = "请先欣赏一组图片";
+		fade();
+	}
+	function change6(){
+		document.getElementById("div1").innerHTML = "听到了什么?";
+		$("#div1").fadeIn(2000);
+	}
+	function change7(){
+		document.getElementById("btn1").style.display="inline-block";
+		document.getElementById("btn2").style.display="inline-block";
+	}
+	
+	function btn1OnClick(){
+
+		var str; 
+		if(i===0){
+			str = "不对"
+			i++;
+		}else if(i===1){
+			str = "你没有点错，就是不对"
+			i++;
+		}else if(i===2){
+			str = "咋这么犟呢，还是不对"
+			i++
+		}else if(i>2){
+			str = "你看你这个小姑娘，不会换一个点啊"
+			i++
+		}
+		$("#div4").fadeIn(1000);
+		document.getElementById("div4").innerHTML = str;
+		$("#div4").fadeOut(1000);
+	}
+	function btn2OnClick(){
+		document.getElementById("music").src = "woaini.mp3"
+	}
 window.onload = function(){
-	$("#div1").fadeIn(2000);
-	setTimeout("pause()",1000);
-	$("#div1").fadeOut(1000);
+	setTimeout("change1()",100);
+	setTimeout("change2()",1000);
+	setTimeout("change3()",5000);
+	setTimeout("change4()",9000);
+	setTimeout("change5()",13000);
+	setTimeout("change6()",17000);
+	setTimeout("change7()",21000);
 }
-
 </script>
-
 </head>
 <body >
-<audio src="rehe.mp3" preload="none" controls="controls" autoplay>
+<audio src="rehe.mp3" preload="none" id = "music">
 </audio>
 <div id = "div1">
-张思圆
+</div>
+<div id = "div2">
+</div>
+<div id = "div3">
+<button type="button" id = "btn1" onClick = "btn1OnClick()">热河</button> 
+<button type="button" id = "btn2" onClick = "btn2OnClick()">我喜欢你</button>
+</div>
+<div id = "div4">
 </div>
 </body>
 </html>
