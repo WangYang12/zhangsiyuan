@@ -16,6 +16,11 @@
   margin-top:50px;
   }
   
+  #div2{
+  margin-top:50px;
+
+  }
+  
   #div4{
   color:red;
   text-align:center;
@@ -48,6 +53,24 @@
   font-size:1em;
   
   }
+  #img1{
+	width:300px;
+	height:300px;
+	display:none;
+	position:absolute;
+  }
+  #img2{
+	width:300px;
+	height:300px;
+	display:none;
+	position:absolute;
+  }
+  #img3{
+	width:300px;
+	height:300px;
+	display:none;
+	position:absolute;
+  }
 </style>
 <script>
 	var i = 0;
@@ -73,17 +96,40 @@
 	}
 	function change5(){
 		document.getElementById("div1").innerHTML = "请先欣赏一组图片";
-		fade();
+		$("#div1").fadeIn(2000);
+		
+		play();
+		
+	
 	}
 	function change6(){
+		document.getElementById("div1").innerHTML = "好玩不?";
+		fade();
+	}
+	
+	function change7(){
 		document.getElementById("div1").innerHTML = "听到了什么?";
 		$("#div1").fadeIn(2000);
 	}
-	function change7(){
+	function change8(){
 		document.getElementById("btn1").style.display="inline-block";
 		document.getElementById("btn2").style.display="inline-block";
 	}
-	
+	function play1(){
+		document.getElementById("img1").style.display="inline-block";
+		$("#img1").animate({left:'100px'});
+	}
+	function play2(){
+		document.getElementById("img2").style.display="inline-block";
+		$("#img2").animate({left:'500px'});
+	}
+	function play3(){
+		document.getElementById("img3").style.display="inline-block";
+		$("#img3").animate({left:'900px'});
+	}
+	function display(){
+		document.getElementById("div2").style.display="none";
+	}
 	function btn1OnClick(){
 
 		var str; 
@@ -113,8 +159,13 @@ window.onload = function(){
 	setTimeout("change3()",5000);
 	setTimeout("change4()",9000);
 	setTimeout("change5()",13000);
-	setTimeout("change6()",17000);
-	setTimeout("change7()",21000);
+	setTimeout("play1()",17000);
+	setTimeout("play2()",19000);
+	setTimeout("play3()",21000);
+	setTimeout("change6()",23000);
+	setTimeout("display()",27000);
+	setTimeout("change7()",28000);
+	setTimeout("change8()",32000);
 }
 </script>
 </head>
@@ -124,6 +175,9 @@ window.onload = function(){
 <div id = "div1">
 </div>
 <div id = "div2">
+	<img src = "1.jpg" id = "img1"></img>
+	<img src = "2.jpg" id = "img2"></img>
+	<img src = "4.jpg" id = "img3"></img>
 </div>
 <div id = "div3">
 <button type="button" id = "btn1" onClick = "btn1OnClick()">热河</button> 
