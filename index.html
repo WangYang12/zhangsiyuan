@@ -15,10 +15,15 @@
   font-family:NSimSun;
   margin-top:50px;
   }
-  
+  h1{
+  color:white;
+  text-align:center;
+  font-size : 5em;
+  font-family:NSimSun;
+  display:none;
+  }
   #div2{
   margin-top:50px;
-
   }
   
   #div4{
@@ -131,7 +136,6 @@
 		document.getElementById("div2").style.display="none";
 	}
 	function btn1OnClick(){
-
 		var str; 
 		if(i===0){
 			str = "不对"
@@ -152,6 +156,15 @@
 	}
 	function btn2OnClick(){
 		document.getElementById("music").src = "woaini.mp3"
+		$("#div1").fadeOut(10);
+		$("#div2").fadeOut(10);
+		$("#div3").fadeOut(10);
+		$("#div4").fadeOut(10);
+		$("#h1").fadeIn(10000);
+		$("#h2").fadeIn(20000);
+		$("#h3").fadeIn(30000);
+		$("#h4").fadeIn(40000);
+		
 	}
 window.onload = function(){
 	setTimeout("change1()",100);
@@ -170,7 +183,7 @@ window.onload = function(){
 </script>
 </head>
 <body >
-<audio src="rehe.mp3" preload="none" id = "music" autoplay>
+<audio src="rehe.mp3" preload="none" id = "music">
 </audio>
 <div id = "div1">
 </div>
@@ -184,6 +197,12 @@ window.onload = function(){
 <button type="button" id = "btn2" onClick = "btn2OnClick()">我喜欢你</button>
 </div>
 <div id = "div4">
+</div>
+<div id = "div5">
+<h1 id = "h1">傻姑娘，歌好听不？</h1>
+<h1 id = "h2">一起去热河路吧！</h1>
+<h1 id = "h3">傻姑娘，去不去啊？</h1>
+<h1 id = "h4">傻姑娘说：走吧！</h1>
 </div>
 </body>
 </html>
